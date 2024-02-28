@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+    <title>Google</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="googleBox">
+            <div class="google-logo">
+                <img src="logo.png" alt="Google-logo">
+            </div>
+            <div class="search">
+                <input type="text" name="search" id="inp">
+                <img src="search-line.png" alt="img" id="search1">
+                <img src="close-line.png" alt="img" id="clean">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('clean').addEventListener("click", () => {
+            document.getElementById("inp").value = ""
+            document.getElementById("clean").style.display = "none"
+        })
+        window.addEventListener('keydown', () => {
+            if (document.getElementById('inp').value.length > 0) {
+                document.getElementById('clean').style.display = "block"
+            }
+        })
+        document.getElementById('search1').addEventListener('click', () => {
+            window.location.href = `https://www.google.com/search?q=${document.getElementById('inp').value}`
+        })
+    </script>
+</body>
+
+</html>
